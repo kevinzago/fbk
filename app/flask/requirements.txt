@@ -1,0 +1,12 @@
+Flask
+flask_restful
+Werkzeug
+Flask-JWT-Extended
+Flask-RESTful
+Flask-SQLAlchemy
+passlib
+datetime
+flask_sslify 
+
+
+
