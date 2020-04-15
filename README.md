@@ -169,7 +169,7 @@ Un messaggio 201 avverte che il nuovo utente è stato creato. "message": "User c
     
     api.add_resource(User, '/info/<int:user_id>')
 
-Effettuando una richiesta all'endpoint /info http://localhost:8080/info/1 e inserendo dopo /info/n (n=1) si ha il primo utente e con (n=2) si ha il secondo utente (n=3) si ha il terzo ... E' necessario inserire il token valido nel campo TOKEN di tipo Bearer, se l'utente non inserisce il token un messaggio di errore: error": "invalid_token", "message": "Signature verification failed." 401 avvisa l'utente. Una volta inserto un token valido è possibile visualizzare le informazioni sull'utente. 
+Effettuando una richiesta all'endpoint /info http://localhost:8080/info/1 e inserendo dopo /info/n (n=1) si ha il primo utente e con (n=2) si ha il secondo utente (n=3) si ha il terzo ... E' necessario inserire il token valido nel campo TOKEN di tipo Bearer, se l'utente non inserisce il token un messaggio di errore: error": "invalid_token", "message": "Signature verification failed." 401 avvisa l'utente. Una volta inserto un token valido è possibile visualizzare le informazioni sull'utente (200).
 
 ![](immagini/4.png)
 
@@ -190,6 +190,42 @@ Effettuando una richiesta all'endpoint /info http://localhost:8080/info/1 e inse
 
     api.add_resource(UserLogin, '/auth')
 
+L'utente effettuando una richiesta POST http://localhost:8080/auth è possibile autenticarsi.
+ 
+Questa risorsa utilizza Flask-JWT-Extended per generare un JWT (noto anche come token di accesso) e un token di aggiornamento per un determinato utente.
+
+I JWT contengono payload codificati (idcampo dell'utente ) che possiamo quindi utilizzare per recuperare a quale utente è destinato il JWT quando ritorna in un'altra richiesta.
+
+Questa risorsa controlla la combinazione nome user / password / info per assicurarsi che sia corretta.
+
+Si noti che il token di accesso restituito da questo metodo viene creato con la create_access_token funzione, con il fresh=True parametro. Poiché questo endpoint risponde direttamente al login (auth) dell'utente, il token di accesso restituito sarà sempre aggiornato.
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
     Token refresh
 
 api.add_resource(TokenRefresh, '/refresh')
