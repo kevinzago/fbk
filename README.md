@@ -13,7 +13,7 @@ I principali componeneti utilizzati sono:
 - Docker (alpine:latest) 
 - Python 3.7.3
 - Insomnia (API Testing Tools) 
-- Database Service (SQLite) connettore SQL Alchemy : app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+- Database Service (SQLite) connettore SQL Alchemy (app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db')
 
 ## Descrizione 
 
@@ -43,11 +43,23 @@ Librerie utilizzate per la creazione REST APIs:
 
 
 
-Struttura della nostra API REST
+## Struttura della nostra API REST
 
--app.py: inizializzazioe e configurazione la nostra applicazione Flask e le nostre risorse API.Questo file è il punto di 
-         accesso alla nostra API REST;
-- 
+app.py:
+In app.pyinizializzeremo e configureremo la nostra applicazione Flask. Configureremo anche le nostre risorse API.
+Questo file è il punto di accesso alla nostra API REST;
+
+db.py:
+In questo file creeremo il nostro oggetto database Python;
+
+cartella models/user.py:
+UserModel è la definizione dei dati finale nella nostra API. Contengono:
+- id; user; password; info;
+
+cartella resources/user.py
+Queste risorse sono abbastanza diverse dalle altre due perché non si occupano solo della creazione e dell'aggiornamento dei dati nella nostra applicazione, ma si occupano anche di vari flussi di utenti come autenticazione, aggiornamento token, disconnessione e altro ancora.
+
+
 
 
 
