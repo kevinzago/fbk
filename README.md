@@ -345,7 +345,7 @@ JWT_BLACKLIST_ENABLED: se abilitare o meno la lista nera in Flask-JWT-Extended. 
 
 JWT_BLACKLIST_TOKEN_CHECKS: quali token per confrontare con la lista nera. Esistono due: access tokens e refresh tokens.
 
-## CREAZIONE TABELLA NEL DB
+## Creazione TABELLA users nel DB
 
 La tabella users viene creata nel db SQLite format 3 utlizzando il connettore SQLALCHEMY. SQLAlchemy e crea un db oggetto che collegherà il database alla nostra app. db.create_all(). Un file data.db viene creato per salvare gli utenti con le seguenti valori:
 
@@ -462,6 +462,8 @@ E' stato implementato un reverse Proxy NGINX che espone esternamente l'app dalla
   
 ![](immagini/15.png)   
  
+
+
 ![](immagini/17.png)
 
 
