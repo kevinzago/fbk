@@ -33,40 +33,68 @@ E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. J
 
 flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 
+from flask_jwt_extended import (
+    create_access_token,            # CREAZIONE ACCESS TOKEN
+    create_refresh_token,           # CREAZIONE REFRESH TOKEN 
+    jwt_refresh_token_required,     # DECORATORE PER PROTEGERRE UN ENDPOINT  (si assicurerà che il richiedente abbia un token 
+                                      di aggiornamento valido prima di consentire la chiamata dell'endpoint)
+    get_jwt_identity,               # 
+    jwt_required,
+    get_raw_jwt,
+    get_jwt_claims
+)
+
 ## REST APIs with Flask and Python
 
 L'API (interfaccia di programmazione dell'applicazione) consente la comunicazione tra due applicazioni per recuperare o inviare i dati. 
 
 Librerie utilizzate per la creazione REST APIs: 
 
+Flask-RESTful è un'estensione per Flask che aggiunge il supporto per la creazione rapida di API REST. È un'astrazione leggera che funziona con i tuoi ORM / librerie esistenti.
 
+LIBRERIE:
 
+_________________________________________________
+from flask_restful import Api
+from flask_restful import Resource, reqparse
+from werkzeug.security import safe_str_cmp
+from models.user import UserModel
+from blacklist import BLACKLIST
+_________________________________________________
 
 
 ## Struttura della nostra API REST
-
+_______
 app.py:
+_______
 In app.pyinizializzeremo e configureremo la nostra applicazione Flask. Configureremo anche le nostre risorse API.
 Questo file è il punto di accesso alla nostra API REST;
-
+_______
 db.py:
+_______
 In questo file creeremo il nostro oggetto database Python;
 
+_________________________
 cartella models/user.py:
+_________________________
 
 UserModel è la definizione dei dati finale nella nostra API. 
 Contengono: id; user; password; info;
 
+____________________________
 cartella resources/user.py: 
-
+____________________________
 Queste risorse sono abbastanza diverse dalle altre due perché non si occupano solo della creazione e dell'aggiornamento dei dati nella nostra applicazione, ma si occupano anche delle specifiche migliorative di vari flussi di utenti come autenticazione, aggiornamento token, disconnessione e altro ancora.
 
-Specifiche migliorative
 - In caso di login/password errati deve restituire un errore
 - In caso di token sbagliato deve restituire errore
 - Il token deve avere una validità temporale limitata (esempio 10 minuti)
 - In alternativa alla scadenza temporale del token un endpoint: /logout per chiudere la sessione
   ed annullare il token dell’utente
+  
+## Approfondimento: risorse dell'utente
+
+
 
 
 
