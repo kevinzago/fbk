@@ -128,6 +128,21 @@ Le risorse (API) utente implementate sono:
 La maggior parte di queste risorse risponde alle POST richieste in quanto è il metodo utilizzato per rispondere a dati arbitrari e non necessariamente per creare modelli e salvarli nel nostro server. 
 
           Indirizzo URL è http://localhost:8080/
+          
+          
+Ogni risorsa è una classe che definisce alcuni metodi. Ogni metodo corrisponde a un verbo HTTP (GET e POST utilizzati).
+
+Il codice di stato HTTP più comune non è 404, come molti pensano! Sono infatti 200, che significa "OK".
+
+Alcuni altri sono:
+
+200 OK
+201 CREATED
+301 PERMANENT REDIRECT
+400 BAD REQUEST
+401 UNAUTHORIZED
+404 NOT FOUND
+500 INTERNAL SERVER ERROR
 
 
 API: 
@@ -311,6 +326,93 @@ Se l'utente non inserisce nel campo TOKEN (Bearer) un token valido o effettua un
 
 
 ![](immagini/12.png)
+
+## DB SQLite creazione e configurazione dell'app
+
+Il UserModel è molto simile a quello ItemModel, perché in realtà non fa nulla da sola.
+
+È solo un contenitore di dati (db), con alcuni metodi di supporto che ci semplificano la vita.
+
+Impostiamo alcuni parametri di configurazione. In questa app stiamo impostando:
+
+SQLALCHEMY_DATABASE_URI: quale database vogliamo usare. Stiamo usando SQLite.
+
+SQLALCHEMY_TRACK_MODIFICATIONS: una configurazione per Flask-SQLAlchemy che tiene traccia delle modifiche ai modelli SQLAlchemy. 
+
+PROPAGATE_EXCEPTIONS: un parametro di configurazione quasi completamente non documentato di Flask, è necessario che le eccezioni Flask-RESTful vengano visualizzate nella nostra app come errori invece di arrestare in modo anomalo il nostro server con un generico "Internal Server Error").
+
+JWT_BLACKLIST_ENABLED: se abilitare o meno la lista nera in Flask-JWT-Extended. È necessario per consentire agli utenti di disconnettersi.
+
+JWT_BLACKLIST_TOKEN_CHECKS: quali token per confrontare con la lista nera. Esistono due: access tokens e refresh tokens.
+
+## CREAZIONE TABELLA NEL DB
+
+La tabella users viene creata nel db SQLite format 3 utlizzando il connettore SQLALCHEMY. Un file data.db viene creato
+per salvare gli utenti con le seguenti valori:
+
+    # file data.db
+    id INTEGER NOT NULL, 
+	user VARCHAR(80), 
+	password VARCHAR(80), 
+	info VARCHAR(80), 
+	PRIMARY KEY (id)
+
+    # app.py
+    
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+
+    @app.before_first_request
+    def create_tables():
+       db.create_all()
+
+
+    class UserModel(db.Model):
+    __tablename__ = 'users'
+
+
+    id = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.String(80))
+    password = db.Column(db.String(80))
+    info = db.Column(db.String(80))
+
+
+    def __init__(self, user, password, info):
+        self.user = user
+        self.password = password
+        self.info = info
+            
+    def encrypt_password(self):
+        return pwd_context.encrypt(self.password)
+
+
+    def check_encrypted_password(self, hashed):
+        return pwd_context.verify(self.password, hashed)   
+    
+
+    def json(self):
+        return {
+            'id': self.id,
+            'user': self.user,
+            'password': self.password,
+            'info': self.info,
+        }
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+    
+    def delete_from_db(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    @classmethod
+    def find_by_username(cls, user):
+        return cls.query.filter_by(user=user).first()
+
+    @classmethod
+    def find_by_id(cls, _id):
+        return cls.query.filter_by(id=_id).first()
+
 
 
 
