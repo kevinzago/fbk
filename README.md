@@ -16,7 +16,8 @@ I principali componeneti utilizzati sono:
 - Database Service (SQLite) connettore SQL Alchemy
 
 ## Descrizione 
-E' stato sviluppato un servizio di database utilizzando il db SQLite che permette agli utenti di accedervi tramite un'API REST utilizzando metodi HTTP come POST, PUT e GET. E' stato utilizzato 
+
+E' stato sviluppato un servizio di database utilizzando il db SQLite che permette agli utenti di accedervi tramite un'API REST utilizzando metodi HTTP come POST, PUT e GET. E' stato utilizzato JWT diventa uno standard di autorizzazione e comunicazione tra SPA e web server.
 
 
 
