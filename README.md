@@ -165,9 +165,11 @@ Un messaggio 201 avverte che il nuovo utente è stato creato. "message": "User c
 
 
 
-    effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le         informazioni sull’utente
+    Effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le         informazioni sull’utente
+    
+    api.add_resource(User, '/info/<int:user_id>')
 
-api.add_resource(User, '/info/<int:user_id>')
+
 
     Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) 
 
