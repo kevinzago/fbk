@@ -31,6 +31,14 @@ JSON è generalmente composto da tre parti come segue:
 
 E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. JWT diventa uno standard di autorizzazione e comunicazione tra SPA e web server.Viene utilizzato per gestire l'autenticazione in Flask con l'utilizzo della libreria flask-jwt-extended. flask-jwt-extended è un’estensione di flask per gestire l’autenticazione usando JWT.
 
+Un JWT è un token Web JSON, è un insieme di dati codificati in una lunga stringa. I dati codificati contengono elementi come:
+
+Un isscampo, che viene generalmente utilizzato per identificare in modo univoco l'utente che ha generato questo JWT;
+Un jticampo, che è un identificatore univoco per questo JWT (non per l'utente!);
+Un algcampo, che definisce quale algoritmo è stato utilizzato per codificare questo JWT;
+Un expcampo, che contiene un timestamp della data di scadenza di questo JWT;
+Dati arbitrari che vogliamo includere in esso (chiamati "reclami").
+
 flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 
 -> user.py
