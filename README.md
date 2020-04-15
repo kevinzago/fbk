@@ -20,17 +20,20 @@ I principali componeneti utilizzati sono:
 E' stato sviluppato un servizio di database utilizzando il db SQLite che permette agli utenti di accedervi tramite un'API REST utilizzando metodi HTTP come POST, PUT e GET. 
 
 
-# Token Web JSON 
+## Token Web JSON 
 
-Il token Web JSON, noto anche come JWT , è il modo sicuro di trasferire token casuali tra due parti o entità. JSON è generalmente composto da tre parti come segue:
+Il token Web JSON, noto anche come JWT , è il modo sicuro di trasferire token casuali tra due parti o entità. JWT è uno standard Open per creare chiavi (token) di accesso tra un server e un client.
+JSON è generalmente composto da tre parti come segue: 
 
 - Payload
 - Header
 - Signature
 
-E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. JWT diventa uno standard di autorizzazione e comunicazione tra SPA e web server.
+E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. JWT diventa uno standard di autorizzazione e comunicazione tra SPA e web server.Viene utilizzato per gestire l'autenticazione in Flask con l'utilizzo della libreria flask-jwt-extended. flask-jwt-extended è un’estensione di flask per gestire l’autenticazione usando JWT.
 
-# REST API 
+flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
+
+## REST API 
 
 
 
