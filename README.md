@@ -112,9 +112,20 @@ Esistono più risorse utente, ognuna con solo uno o due metodi.
 La maggior parte di queste risorse risponde alle POST richieste in quanto è il metodo utilizzato per rispondere a dati arbitrari e non necessariamente per creare modelli e salvarli nel nostro server. 
 
 
-    Create Admin 
+    Create Admin con l’utente admin e relativa password (Token)
 
-api.add_resource(TokenAdmin, '/admin')
+    api.add_resource(TokenAdmin, '/admin')
+
+ 
+ L'utente Admin con la relativa password (token) viene creato facendo una richiesta POST 
+
+
+
+
+
+
+
+
 
     Inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e info (nel  
     database)
