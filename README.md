@@ -486,6 +486,8 @@ Per Attivare il certificato SSL è opportuno modificare app.debug da True a Fals
       sslify = SSLify(app)
 
 
+![](immagini/18.png)
 
+![](immagini/19.png)   
 
 ## Esecuzione dell'app
