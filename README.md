@@ -201,9 +201,15 @@ Questa risorsa controlla la combinazione nome user / password / info per assicur
 Si noti che il token di accesso restituito da questo metodo viene creato con la create_access_token funzione, con il fresh=True parametro. Poiché questo endpoint risponde direttamente al login (auth) dell'utente, il token di accesso restituito sarà sempre aggiornato.
 
 
+![](immagini/6.png)
+ 
 
+![](immagini/7.png)
+
+
+![](immagini/8.png)
  
- 
+  
  
  
  
