@@ -9,9 +9,9 @@ Flask è un framework basato su Python. È un micro-framework utilizzato dagli s
 
 La configurazione del sistema è la seguente.
 
-Docker 
-Python 3.8
-Insomnia 
+- Docker (alpine:latest) 
+- Python 3.7.3
+- Insomnia (API Testing Tools) 
 
 Descrizione 
 E' stato sviluppato un servizio di database utilizzando SQLite che permette agli utenti di accedervi tramite un'API REST utilizzando metodi HTTP come POST, PUT e GET. E' stato utiliza
