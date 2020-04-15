@@ -53,10 +53,11 @@ db.py:
 In questo file creeremo il nostro oggetto database Python;
 
 cartella models/user.py:
-UserModel è la definizione dei dati finale nella nostra API. Contengono:
-- id; user; password; info;
+UserModel è la definizione dei dati finale nella nostra API. 
+Contengono: id; user; password; info;
 
-cartella resources/user.py:
+cartella resources/user.py: 
+
 Queste risorse sono abbastanza diverse dalle altre due perché non si occupano solo della creazione e dell'aggiornamento dei dati nella nostra applicazione, ma si occupano anche delle specifiche migliorative di vari flussi di utenti come autenticazione, aggiornamento token, disconnessione e altro ancora.
 
 Specifiche migliorative
