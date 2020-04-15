@@ -458,7 +458,10 @@ E' stato implementato un reverse Proxy NGINX che espone esternamente l'app dalla
 
      (base) MacBook-Pro-di-kevin:flask kevin$ docker-compose up --build
      
-      ![](immagini/15.png)
      
+  
+![](immagini/15.png)   
+ 
+![](immagini/16.png)
 
 
