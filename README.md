@@ -219,36 +219,27 @@ Viene restituito:
 
 ![](immagini/8.png)
  
-  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-    
+      
     Token refresh
 
-api.add_resource(TokenRefresh, '/refresh')
+    api.add_resource(TokenRefresh, '/refresh')
+
+Questa risorsa accetta un token di aggiornamento e ci fornisce un token di accesso non aggiornato.
+
+I token di accesso in genere scadono dopo circa 10 minuti dalla loro generazione (alcuni durano più a lungo, a volte fino a qualche giorno). L'aggiornamento token consente alle applicazioni che utilizzano l'API di continuare a richiedere nuovi token di accesso senza che l'utente debba continuare ad accedere più volte.
+
+Tuttavia, questo ci dà token non-fresh tokens. . Se abbiamo un'operazione altamente sensibile e vogliamo ricontrollare che l'utente sia effettivamente loro, abbiamo bisogno che accedano di nuovo. In tal caso, possiamo contrassegnare qualsiasi endpoint che richiede un nuovo token di accesso (fresh access token).
+
+
+
+
+
+
+
 
     logout per chiudere la sessione ed annullare il token dell’utente
 
-api.add_resource(UserLogout, '/logout')
+    api.add_resource(UserLogout, '/logout')
 
 
 
