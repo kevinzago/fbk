@@ -475,7 +475,7 @@ Questa è una semplice estensione Flask che configura l'applicazione Flask per r
 
 Sono stati creati i due certificati di sicurezza CERT.pem e KEY.pem con la libreria openssl. https://www.openssl.org/
 
-Per Attivare il certificato SSL è opportuno modificare app.debug da True a False -> https://localhost:5000/
+Per Attivare il certificato SSL è opportuno modificare app.debug da True a False -> https://localhost:8080/
 
 
 
