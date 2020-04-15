@@ -62,21 +62,26 @@ from flask_jwt_extended import
 
 ## REST APIs with Flask and Python
 
-L'API (interfaccia di programmazione dell'applicazione) consente la comunicazione tra due applicazioni per recuperare o inviare i dati. 
+L'API (interfaccia di programmazione dell'applicazione) consente la comunicazione tra due applicazioni per recuperare o inviare i dati. Flask-RESTful è un'estensione per Flask che aggiunge il supporto per la creazione rapida di API REST. È un'astrazione leggera che funziona con i tuoi ORM / librerie esistenti.
 
 Librerie utilizzate per la creazione REST APIs: 
 
-Flask-RESTful è un'estensione per Flask che aggiunge il supporto per la creazione rapida di API REST. È un'astrazione leggera che funziona con i tuoi ORM / librerie esistenti.
+     1.from flask_restful import Api
+     2.from flask_restful import Resource, reqparse 
+     3.from werkzeug.security import safe_str_cmp
+     4.from blacklist import BLACKLIST
+     
+     
 
-LIBRERIE:
-
-from flask_restful import Api
-from flask_restful import Resource, reqparse
-from werkzeug.security import safe_str_cmp
-from models.user import UserModel
-from blacklist import BLACKLIST
 
 ## Struttura della nostra API REST
+
+     STRUTTURA FILE PROGETTO
+
+
+
+
+
 
 app.py:
 In app.pyinizializzeremo e configureremo la nostra applicazione Flask. Configureremo anche le nostre risorse API.
