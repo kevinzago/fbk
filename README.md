@@ -115,20 +115,22 @@ Queste risorse sono abbastanza diverse dalle altre due perché non si occupano s
   
 ## Approfondimento: risorse dell'utente
 
-Le risorse (AAPI) utente implementate sono:
+Le risorse (API) utente implementate sono:
 
-                1. Create Admin con l’utente admin e relativa password (Token) - (POST) - /admin
-                2. Inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e   
-                   info (nel database) - (POST) - /adduser
-                3. Effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto                      per avere le informazioni sull’utente - GET - /info
-                4. Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) -(POST) - /auth
-                5. Token refresh - (POST) - /refresh
-                6. Logout per chiudere la sessione ed annullare il token dell’utente. - (POST) - /logout
+          1. Create Admin con l’utente admin e relativa password (Token) - (POST) - /admin
+          2. Inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e   
+             info (nel database) - (POST) - /adduser
+          3. Effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto                      per avere le informazioni sull’utente - GET - /info
+          4. Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) -(POST) - /auth
+          5. Token refresh - (POST) - /refresh
+          6. Logout per chiudere la sessione ed annullare il token dell’utente. - (POST) - /logout
 
 La maggior parte di queste risorse risponde alle POST richieste in quanto è il metodo utilizzato per rispondere a dati arbitrari e non necessariamente per creare modelli e salvarli nel nostro server. 
 
-Indirizzo URL è http://localhost:8080/
+          Indirizzo URL è http://localhost:8080/
 
+
+API: 
 
     1. Create Admin con l’utente admin e relativa password (Token)
 
@@ -170,6 +172,20 @@ Un messaggio 201 avverte che il nuovo utente è stato creato. "message": "User c
 
 
 ![](immagini/3.png)
+
+
+
+
+
+
+
+
+
+Questa risorsa esamina i dati passati dalla richiesta e crea un nuovo a UserModelmeno che non esista già un utente con quel nome.
+
+![](immagini/13.png)
+
+
 
 
 
