@@ -53,6 +53,7 @@ db.py:
 In questo file creeremo il nostro oggetto database Python;
 
 cartella models/user.py:
+
 UserModel è la definizione dei dati finale nella nostra API. 
 Contengono: id; user; password; info;
 
