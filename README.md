@@ -86,7 +86,7 @@ Librerie utilizzate per la creazione REST APIs:
 
      STRUTTURA FILE PROGETTO
 
-
+![](immagini/16.png)
 
 
 
@@ -301,7 +301,7 @@ L'utente inserendo nel campo TOKEN (Bearer) il prprio refresh_token ricevuto dur
 
     api.add_resource(UserLogout, '/logout')
 
-La risorsa UserLogout utilizza la lista nera (BLACKLIST). Quando un utente invia una richiesta a questa risorsa, salviamo l'identificatore univoco del suo token di accesso (che è diverso dal suo utente id!) Nella lista nera (BLACKLIST), in modo che quel token di accesso specifico non possa essere riutilizzato.
+La risorsa UserLogout (http://localhost:8080/logout)  utilizza la lista nera (BLACKLIST). Quando un utente invia una richiesta a questa risorsa, salviamo l'identificatore univoco del suo token di accesso (che è diverso dal suo utente id!) Nella lista nera (BLACKLIST), in modo che quel token di accesso specifico non possa essere riutilizzato.
 
 liberia utilizzata: 
 from blacklist import BLACKLIST
@@ -347,8 +347,7 @@ JWT_BLACKLIST_TOKEN_CHECKS: quali token per confrontare con la lista nera. Esist
 
 ## CREAZIONE TABELLA NEL DB
 
-La tabella users viene creata nel db SQLite format 3 utlizzando il connettore SQLALCHEMY. Un file data.db viene creato
-per salvare gli utenti con le seguenti valori:
+La tabella users viene creata nel db SQLite format 3 utlizzando il connettore SQLALCHEMY. SQLAlchemy e crea un db oggetto che collegherà il database alla nostra app. db.create_all(). Un file data.db viene creato per salvare gli utenti con le seguenti valori:
 
     # file data.db
     id INTEGER NOT NULL, 
@@ -413,6 +412,52 @@ per salvare gli utenti con le seguenti valori:
     def find_by_id(cls, _id):
         return cls.query.filter_by(id=_id).first()
 
+## Costruire container e Composizione
 
+Il dockerfile per l’applicazione python prodotta è stata creata come container alpine: 
+
+A simple but powerful base image, based on Alpine Linux
+
+
+       # Dockerfile 
+       FROM alpine:latest 
+
+       RUN apk add --no-cache python3-dev \
+           && pip3 install --upgrade pip 
+
+       WORKDIR /app
+       COPY . /app
+
+       RUN pip3 --no-cache-dir install -r requirements.txt
+
+       EXPOSE 5000
+
+       ENTRYPOINT ["python3"]
+
+       CMD ["app.py"]
+
+
+E' stato creato un file docker-compose.yml che comprenda i container dell’applicazione sviluppata e di un reverse proxy nginx o apache httpd che deve essere l’unico container che espone porte all’esterno.
+
+      version: '3.1'
+       services:
+          web:
+  	   build: .
+           ports:
+                - "8080:5000"
+          volumes:
+                  - .:/code
+          nginx:
+               image: nginx:1.16.1  
+               ports:
+                - 80:80
+
+
+E' stato implementato un reverse Proxy NGINX che espone esternamente sulla porta:8080 l'app. 
+
+
+     (base) MacBook-Pro-di-kevin:flask kevin$ docker-compose up --build
+     
+     
 
 
