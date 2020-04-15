@@ -13,7 +13,7 @@ I principali componeneti utilizzati sono:
 - Docker (alpine:latest) 
 - Python 3.7.3
 - Insomnia (API Testing Tools) 
-- Database Service (SQLite) connettore SQL Alchemy
+- Database Service (SQLite) connettore SQL Alchemy : app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
 ## Descrizione 
 
@@ -33,7 +33,7 @@ E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. J
 
 flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 
-## REST API 
+## REST APIs with Flask and Python
 
 
 
