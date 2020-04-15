@@ -35,7 +35,8 @@ flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 
 -> user.py
 
-from flask_jwt_extended import (
+from flask_jwt_extended import
+(
     1. create_access_token,            
     2. create_refresh_token,           
     3. jwt_refresh_token_required,     
@@ -51,9 +52,13 @@ from flask_jwt_extended import (
    consentire la chiamata dell'endpoint);
 4. RESTITUISCE L'IDENTITA' DEL JWT che accede a questo endpoint. Se non è presente alcun JWT, viene invece restituito 
    "None";
-5. 
-
-
+5. TOKEN ACCESSO VALIDO REQUISITO  Se si decora un endpoint con questo, si assicurerà che il richiedente abbia 
+   un token di accesso valido prima di consentire la chiamata dell'endpoint. Ciò non controlla la validità del token di 
+   accesso.
+6. CREAZIONE ENDPOINT PROTETTO questo restituirà il dizionario Python che ha tutte le rivendicazioni del JWT che accede 
+   all'endpoint. Se non è presente alcun JWT, viene invece restituito un dict vuoto.
+7. CLAIMS RESTITUISCE IL DIZIONARIO delle attestazioni personalizzate nel JWT che accede all'endpoint. 
+   Se non sono presenti richieste personalizzate dell'utente, viene invece restituito un dict vuoto.
 
 ## REST APIs with Flask and Python
 
