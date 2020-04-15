@@ -453,11 +453,12 @@ E' stato creato un file docker-compose.yml che comprenda i container dell’appl
                 - 80:80
 
 
-E' stato implementato un reverse Proxy NGINX che espone esternamente sulla porta:8080 l'app. 
+E' stato implementato un reverse Proxy NGINX che espone esternamente l'app dalla porta:5000 alla porta 8080. 
 
 
      (base) MacBook-Pro-di-kevin:flask kevin$ docker-compose up --build
      
+      ![](immagini/15.png)
      
 
 
