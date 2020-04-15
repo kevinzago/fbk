@@ -145,7 +145,7 @@ La maggior parte di queste risorse risponde alle POST richieste in quanto è il 
     api.add_resource(UserRegister, '/adduser')
 
 L'Admin attraverso la richesta POST -> http://localhost:8080/adduser crea un nuovo utente inviando un JSON con i seguenti campi (user, password e info) per la creazione di un nuovo utente nel db. 
-Un messaggio di errore avverte l'utente ADMIN sia della revoca del token (password admin) "The token has expired."
+Un messaggio di errore avverte l'utente ADMIN della revoca del token (password admin) "The token has expired."
 
 ![](immagini/2.png)
 
@@ -169,11 +169,26 @@ Un messaggio 201 avverte che il nuovo utente è stato creato. "message": "User c
     
     api.add_resource(User, '/info/<int:user_id>')
 
+Effettuando una richiesta all'endpoint /info http://localhost:8080/info/1 e inserendo dopo /info/n (n=1) si ha il primo utente e con (n=2) si ha il secondo utente (n=3) si ha il terzo ... E' necessario inserire il token valido nel campo TOKEN di tipo Bearer, se l'utente non inserisce il token un messaggio di errore: error": "invalid_token", "message": "Signature verification failed." 401 avvisa l'utente. Una volta inserto un token valido è possibile visualizzare le informazioni sull'utente. 
+
+![](immagini/4.png)
+
+
+![](immagini/5.png)
+
+
+
+
+
+
+
+
+
 
 
     Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) 
 
-api.add_resource(UserLogin, '/auth')
+    api.add_resource(UserLogin, '/auth')
 
     Token refresh
 
