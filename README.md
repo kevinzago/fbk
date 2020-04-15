@@ -119,7 +119,8 @@ La maggior parte di queste risorse risponde alle POST richieste in quanto è il 
  
  L'utente Admin con la relativa password (token) viene creato facendo una richiesta POST. 
  
- ![](immagini/1-png)
+ ![](immagini/1.png)
+
 
  
 
