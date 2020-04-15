@@ -45,7 +45,9 @@ Librerie utilizzate per la creazione REST APIs:
 
 Struttura della nostra API REST
 
-#app.py
+-app.py: inizializzazioe e configurazione la nostra applicazione Flask e le nostre risorse API.Questo file è il punto di 
+         accesso alla nostra API REST;
+- 
 
 
 
