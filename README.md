@@ -45,12 +45,12 @@ from flask_jwt_extended import (
     7. get_jwt_claims
 )
 
-1  CREAZIONE ACCESS TOKEN
-2. CREAZIONE REFRESH TOKEN
+1. CREAZIONE ACCESS TOKEN;
+2. CREAZIONE REFRESH TOKEN;
 3. DECORATORE PER PROTEGERRE UN ENDPOINT  (si assicurerà che il richiedente abbia un token di aggiornamento valido prima di 
-   consentire la chiamata dell'endpoint)
+   consentire la chiamata dell'endpoint);
 4. RESTITUISCE L'IDENTITA' DEL JWT che accede a questo endpoint. Se non è presente alcun JWT, viene invece restituito 
-   "None".
+   "None";
 5. 
 
 
