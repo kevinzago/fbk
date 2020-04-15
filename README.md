@@ -155,7 +155,8 @@ Un messaggio di errore avverte l'utente ADMIN sia della revoca del token (passwo
 
 
 
-L'Admin per creare un nuovo utente deve possedere la password (token), di tipo Bearer e inserila nel campo TOKEN: 
+L'Admin per creare un nuovo utente deve possedere la password (token) valida di tipo Bearer e inserila nel campo TOKEN: 
+Un messaggio 201 avverte che il nuovo utente è stato creato. "message": "User created successfully."
 
 
 ![](immagini/3.png)
