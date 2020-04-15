@@ -53,37 +53,31 @@ Librerie utilizzate per la creazione REST APIs:
 Flask-RESTful è un'estensione per Flask che aggiunge il supporto per la creazione rapida di API REST. È un'astrazione leggera che funziona con i tuoi ORM / librerie esistenti.
 
 LIBRERIE:
-
-_________________________________________________
 from flask_restful import Api
 from flask_restful import Resource, reqparse
 from werkzeug.security import safe_str_cmp
 from models.user import UserModel
 from blacklist import BLACKLIST
-_________________________________________________
-
 
 ## Struttura della nostra API REST
 _______
 app.py:
-_______
+
 In app.pyinizializzeremo e configureremo la nostra applicazione Flask. Configureremo anche le nostre risorse API.
 Questo file è il punto di accesso alla nostra API REST;
 _______
 db.py:
-_______
-In questo file creeremo il nostro oggetto database Python;
 
+In questo file creeremo il nostro oggetto database Python;
+_______
 _________________________
 cartella models/user.py:
-_________________________
 
 UserModel è la definizione dei dati finale nella nostra API. 
 Contengono: id; user; password; info;
-
+__________________________
 ____________________________
 cartella resources/user.py: 
-____________________________
 Queste risorse sono abbastanza diverse dalle altre due perché non si occupano solo della creazione e dell'aggiornamento dei dati nella nostra applicazione, ma si occupano anche delle specifiche migliorative di vari flussi di utenti come autenticazione, aggiornamento token, disconnessione e altro ancora.
 
 - In caso di login/password errati deve restituire un errore
@@ -91,6 +85,7 @@ Queste risorse sono abbastanza diverse dalle altre due perché non si occupano s
 - Il token deve avere una validità temporale limitata (esempio 10 minuti)
 - In alternativa alla scadenza temporale del token un endpoint: /logout per chiudere la sessione
   ed annullare il token dell’utente
+____________________________
   
 ## Approfondimento: risorse dell'utente
 
