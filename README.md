@@ -150,6 +150,7 @@ Un messaggio di errore avverte l'utente ADMIN sia della revoca del token (passwo
 L'Admin per creare un nuovo utente deve possedere la password (token), di tipo Bearer e inserila nel campo TOKEN: 
 
 
+![](immagini/3.png)
 
 
 
