@@ -363,7 +363,18 @@ La tabella users viene creata nel db SQLite format 3 utlizzando il connettore SQ
     @app.before_first_request
     def create_tables():
        db.create_all()
+    
+    # MODELS/user.py
+    
+    from db import db
+    from passlib.context import CryptContext
 
+    #crittografia password
+    pwd_context = CryptContext(
+        schemes=["pbkdf2_sha256"],
+        default="pbkdf2_sha256",
+        pbkdf2_sha256__default_rounds=30000
+    ) 
 
     class UserModel(db.Model):
     __tablename__ = 'users'
