@@ -117,10 +117,11 @@ La maggior parte di queste risorse risponde alle POST richieste in quanto è il 
     api.add_resource(TokenAdmin, '/admin')
 
  
- L'utente Admin con la relativa password (token) viene creato facendo una richiesta POST 
+ L'utente Admin con la relativa password (token) viene creato facendo una richiesta POST. 
+ 
+ 
 
-
-
+ 
 
 
 
