@@ -36,7 +36,7 @@ flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 -> user.py
 
 from flask_jwt_extended import
-(
+
     1. create_access_token,            
     2. create_refresh_token,           
     3. jwt_refresh_token_required,     
@@ -44,7 +44,7 @@ from flask_jwt_extended import
     5. jwt_required,
     6. get_raw_jwt,
     7. get_jwt_claims
-)
+
 
 1. CREAZIONE ACCESS TOKEN;
 2. CREAZIONE REFRESH TOKEN;
@@ -54,10 +54,10 @@ from flask_jwt_extended import
    "None";
 5. TOKEN ACCESSO VALIDO REQUISITO  Se si decora un endpoint con questo, si assicurerà che il richiedente abbia 
    un token di accesso valido prima di consentire la chiamata dell'endpoint. Ciò non controlla la validità del token di 
-   accesso.
+   accesso;
 6. CREAZIONE ENDPOINT PROTETTO questo restituirà il dizionario Python che ha tutte le rivendicazioni del JWT che accede 
-   all'endpoint. Se non è presente alcun JWT, viene invece restituito un dict vuoto.
-7. CLAIMS RESTITUISCE IL DIZIONARIO delle attestazioni personalizzate nel JWT che accede all'endpoint. 
+   all'endpoint. Se non è presente alcun JWT, viene invece restituito un dict vuoto;
+7. CLAIMS RESTITUISCE IL DIZIONARIO delle attestazioni personalizzate nel JWT che accede all'endpoint
    Se non sono presenti richieste personalizzate dell'utente, viene invece restituito un dict vuoto.
 
 ## REST APIs with Flask and Python
@@ -69,6 +69,7 @@ Librerie utilizzate per la creazione REST APIs:
 Flask-RESTful è un'estensione per Flask che aggiunge il supporto per la creazione rapida di API REST. È un'astrazione leggera che funziona con i tuoi ORM / librerie esistenti.
 
 LIBRERIE:
+
 from flask_restful import Api
 from flask_restful import Resource, reqparse
 from werkzeug.security import safe_str_cmp
