@@ -60,25 +60,11 @@ cartella resources/user.py:
 Queste risorse sono abbastanza diverse dalle altre due perché non si occupano solo della creazione e dell'aggiornamento dei dati nella nostra applicazione, ma si occupano anche delle specifiche migliorative di vari flussi di utenti come autenticazione, aggiornamento token, disconnessione e altro ancora.
 
 Specifiche migliorative
-• In caso di login/password errati deve restituire un errore
-• In caso di token sbagliato deve restituire errore
-• Il token deve avere una validità temporale limitata (esempio 10 minuti)
-• In alternativa alla scadenza temporale del token un endpoint: /logout per chiudere la sessione
-ed annullare il token dell’utente
-
-
-
-
-
-
-
-
-
-
-• Con l’utente admin e relativa password (che non sono presenti nel database) si possa inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e info (nel database mariadb/mysql)
-• Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) con utente e password (che devono risiedere nel database mariadb/mysql) che deve restituire un token di autenticazione in caso di successo
-• effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le informazioni sull’utente (che si trovano nel database mariadb/mysql)
-• La password di admin deve poter essere passata come parametro all’avvio del programma
+- In caso di login/password errati deve restituire un errore
+- In caso di token sbagliato deve restituire errore
+- Il token deve avere una validità temporale limitata (esempio 10 minuti)
+- In alternativa alla scadenza temporale del token un endpoint: /logout per chiudere la sessione
+  ed annullare il token dell’utente
 
 
 
