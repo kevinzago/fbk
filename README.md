@@ -133,8 +133,27 @@ La maggior parte di queste risorse risponde alle POST richieste in quanto è il 
 
     Inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e info (nel  
     database)
+    
+    api.add_resource(UserRegister, '/adduser')
 
-api.add_resource(UserRegister, '/adduser')
+L'Admin attraverso la richesta POST -> http://localhost:8080/adduser crea un nuovo utente inviando un JSON con i seguenti campi (user, password e info) per la creazione di un nuovo utente nel db. 
+Un messaggio di errore avverte l'utente ADMIN sia della revoca del token (password admin) "The token has expired."
+
+![](immagini/2.png)
+
+
+
+
+
+
+
+L'Admin per creare un nuovo utente deve possedere la password (token), di tipo Bearer e inserila nel campo TOKEN: 
+
+
+
+
+
+
 
     effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le         informazioni sull’utente
 
