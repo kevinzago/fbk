@@ -259,11 +259,18 @@ Se vogliono accedere di nuovo, possono —> verrà generato un nuovo token di ac
 
 
 
-
 Questo utilizza la get_raw_jwt()funzione di Flask-JWT-Extended. Ci dà un dizionario delle varie proprietà memorizzate all'interno del JWT decodificato.
 
+Se l'utente non inserisce nel campo TOKEN (Bearer) un token valido o effettua una richiesta con un token non valido, un messaggio di errore 401 avvisa l'utente che 
+
+1."error": "invalid_token", "message": "Signature verification failed."
+
+2."description": "The token has been revoked.", "error": "token_revoked"
 
 
+
+
+![](immagini/12.png)
 
 
 
