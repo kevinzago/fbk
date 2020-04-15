@@ -505,4 +505,9 @@ Per Attivare il certificato SSL è opportuno modificare app.debug da True a Fals
 
 Per installare l'app Flask eseguire i seguenti passaggi: 
 
-       1. git clone 
+       1. https://github.com/kevinzago/fbk/
+       2. git clone https://github.com/kevinzago/fbk.git
+       3. cd fbk/app/flask
+       4. docker-compose up --build
+       
+       
