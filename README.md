@@ -462,6 +462,6 @@ E' stato implementato un reverse Proxy NGINX che espone esternamente l'app dalla
   
 ![](immagini/15.png)   
  
-![](immagini/16.png)
+![](immagini/17.png)
 
 
