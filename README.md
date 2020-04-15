@@ -33,16 +33,27 @@ E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. J
 
 flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 
+-> user.py
+
 from flask_jwt_extended import (
-    create_access_token,            # CREAZIONE ACCESS TOKEN
-    create_refresh_token,           # CREAZIONE REFRESH TOKEN 
-    jwt_refresh_token_required,     # DECORATORE PER PROTEGERRE UN ENDPOINT  (si assicurerà che il richiedente abbia un token 
-                                      di aggiornamento valido prima di consentire la chiamata dell'endpoint)
-    get_jwt_identity,               # 
-    jwt_required,
-    get_raw_jwt,
-    get_jwt_claims
+    1. create_access_token,            
+    2. create_refresh_token,           
+    3. jwt_refresh_token_required,     
+    4. get_jwt_identity,               
+    5. jwt_required,
+    6. get_raw_jwt,
+    7. get_jwt_claims
 )
+
+1  CREAZIONE ACCESS TOKEN
+2. CREAZIONE REFRESH TOKEN
+3. DECORATORE PER PROTEGERRE UN ENDPOINT  (si assicurerà che il richiedente abbia un token di aggiornamento valido prima di 
+   consentire la chiamata dell'endpoint)
+4. RESTITUISCE L'IDENTITA' DEL JWT che accede a questo endpoint. Se non è presente alcun JWT, viene invece restituito 
+   "None".
+5. 
+
+
 
 ## REST APIs with Flask and Python
 
