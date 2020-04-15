@@ -200,13 +200,13 @@ Questa risorsa controlla la combinazione nome user / password / info per assicur
 
 Si noti che il token di accesso restituito da questo metodo viene creato con la create_access_token funzione, con il fresh=True parametro. Poiché questo endpoint risponde direttamente al login (auth) dell'utente, il token di accesso restituito sarà sempre aggiornato.
 
-Viene restituito;
+Viene restituito:
 
      {
         "access_token":      
                      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODY5NDUwNDYsIm5iZiI6MTU4Njk0NTA0NiwianRpIjoiYmRiNjk3NmItMjZmMy00ODM3LTkzNWMtM2U1N2JiOTA0YWFiIiwiZXhwIjoxNTg2OTQ1OTQ2LCJpZGVudGl0eSI6MSwiZnJlc2giOnRydWUsInR5cGUiOiJhY2Nlc3MiLCJ1c2VyX2NsYWltcyI6eyJpc19hZG1pbiI6dHJ1ZX19.6GRG8uE3R8DXkP7MSEbRvMCvQuwXigDsZHq0Ec-GdOw",
   
-        "refresh_token":    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODY5NDUwNDYsIm5iZiI6MTU4Njk0NTA0NiwianRpIjoiMDJjNGRkMDAtYmY2Yy00MTEzLTkyMWQtMTUwNzc3MTUyNzAwIiwiZXhwIjoxNTg5NTM3MDQ2LCJpZGVudGl0eSI6MSwidHlwZSI6InJlZnJlc2gifQ.-je1eJntW2ctrcIrEK3uKAPyMnGTBjDPoKHRNa05Plk",
+        "refresh_token":  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODY5NDUwNDYsIm5iZiI6MTU4Njk0NTA0NiwianRpIjoiMDJjNGRkMDAtYmY2Yy00MTEzLTkyMWQtMTUwNzc3MTUyNzAwIiwiZXhwIjoxNTg5NTM3MDQ2LCJpZGVudGl0eSI6MSwidHlwZSI6InJlZnJlc2gifQ.-je1eJntW2ctrcIrEK3uKAPyMnGTBjDPoKHRNa05Plk",
        
         "user_id": 1
       }
