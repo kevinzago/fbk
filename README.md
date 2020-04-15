@@ -9,7 +9,7 @@ Flask è un framework basato su Python. È un micro-framework utilizzato dagli s
 
 I principali componeneti utilizzati sono:
 
-- Flask 
+- Flask (1.1.2)
 - Docker (alpine:latest) 
 - Python 3.7.3
 - Insomnia (API Testing Tools) 
@@ -17,7 +17,20 @@ I principali componeneti utilizzati sono:
 
 ## Descrizione 
 
-E' stato sviluppato un servizio di database utilizzando il db SQLite che permette agli utenti di accedervi tramite un'API REST utilizzando metodi HTTP come POST, PUT e GET. E' stato utilizzato JWT diventa uno standard di autorizzazione e comunicazione tra SPA e web server.
+E' stato sviluppato un servizio di database utilizzando il db SQLite che permette agli utenti di accedervi tramite un'API REST utilizzando metodi HTTP come POST, PUT e GET. 
+
+
+# Token Web JSON 
+
+Il token Web JSON, noto anche come JWT , è il modo sicuro di trasferire token casuali tra due parti o entità. JSON è generalmente composto da tre parti come segue:
+
+- Payload
+- Header
+- Signature
+
+E' stato utilizzato JWT per creare un server web Flask con autorizzazione JWT. JWT diventa uno standard di autorizzazione e comunicazione tra SPA e web server.
+
+# REST API 
 
 
 
