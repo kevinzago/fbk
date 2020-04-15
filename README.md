@@ -467,3 +467,10 @@ E' stato implementato un reverse Proxy NGINX che espone esternamente l'app dalla
 ![](immagini/17.png)
 
 
+
+Esporre il webservice via https e ridirezione in caso http:
+
+
+
+
+## Esecuzione dell'app
