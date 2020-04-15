@@ -470,6 +470,21 @@ E' stato implementato un reverse Proxy NGINX che espone esternamente l'app dalla
 
 Esporre il webservice via https e ridirezione in caso http:
 
+E'stata utilizzata la libreria flask_sslify https://pypi.org/project/Flask-SSLify/ per esporre il webserivce via HTTPS. 
+Questa è una semplice estensione Flask che configura l'applicazione Flask per reindirizzare tutte le richieste in arrivo su HTTPS. Per rendere piu robusta l'endpoint API è necessario configuarlo con la liberia flask-talisman https://pypi.org/project/flask-talisman/. 
+
+Sono stati creati i due certificati di sicurezza CERT.pem e KEY.pem con la libreria openssl. https://www.openssl.org/
+
+Per Attivare il certificato SSL è opportuno modificare app.debug da True a False.
+
+
+
+      from flask import Flask
+      from flask_sslify import SSLify
+
+      app = Flask(__name__)
+      sslify = SSLify(app)
+
 
 
 
