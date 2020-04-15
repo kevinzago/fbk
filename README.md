@@ -112,27 +112,28 @@ Esistono più risorse utente, ognuna con solo uno o due metodi.
 La maggior parte di queste risorse risponde alle POST richieste in quanto è il metodo utilizzato per rispondere a dati arbitrari e non necessariamente per creare modelli e salvarli nel nostro server. 
 
 
-## Create Admin 
+    Create Admin 
 
 api.add_resource(TokenAdmin, '/admin')
 
-## inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e info (nel database)
+    Inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e info (nel  
+    database)
 
 api.add_resource(UserRegister, '/adduser')
 
-## effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le informazioni sull’utente
+    effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le         informazioni sull’utente
 
 api.add_resource(User, '/info/<int:user_id>')
 
-## Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) 
+    Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) 
 
 api.add_resource(UserLogin, '/auth')
 
-## Token refresh
+    Token refresh
 
 api.add_resource(TokenRefresh, '/refresh')
 
-## /logout per chiudere la sessione ed annullare il token dell’utente
+    logout per chiudere la sessione ed annullare il token dell’utente
 
 api.add_resource(UserLogout, '/logout')
 
