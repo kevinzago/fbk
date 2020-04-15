@@ -230,7 +230,7 @@ I token di accesso in genere scadono dopo circa 10 minuti dalla loro generazione
 
 Tuttavia, questo ci dà token non-fresh tokens. . Se abbiamo un'operazione altamente sensibile e vogliamo ricontrollare che l'utente sia effettivamente loro, abbiamo bisogno che accedano di nuovo. In tal caso, possiamo contrassegnare qualsiasi endpoint che richiede un nuovo token di accesso (fresh access token).
 
-L'utente inserendo nel campo TOKEN il prprio refresh_token ricevuto durante l'operazione di login (auth), è possibile effettuare una chiamata POST http://localhost:8080/refresh per ottenere il nuovo token valido "access_token".
+L'utente inserendo nel campo TOKEN (Bearer) il prprio refresh_token ricevuto durante l'operazione di login (auth), è possibile effettuare una chiamata POST http://localhost:8080/refresh per ottenere il nuovo token valido "access_token".
 
 ![](immagini/9.png)
 
