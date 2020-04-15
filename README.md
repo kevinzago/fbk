@@ -246,11 +246,21 @@ L'utente inserendo nel campo TOKEN (Bearer) il prprio refresh_token ricevuto dur
 
     api.add_resource(UserLogout, '/logout')
 
+La risorsa UserLogout utilizza la lista nera (BLACKLIST). Quando un utente invia una richiesta a questa risorsa, salviamo l'identificatore univoco del suo token di accesso (che è diverso dal suo utente id!) Nella lista nera (BLACKLIST), in modo che quel token di accesso specifico non possa essere riutilizzato.
+
+liberia utilizzata: 
+from blacklist import BLACKLIST
+
+Se vogliono accedere di nuovo, possono —> verrà generato un nuovo token di accesso.
+
+
+![](immagini/11.png)
 
 
 
 
 
+Questo utilizza la get_raw_jwt()funzione di Flask-JWT-Extended. Ci dà un dizionario delle varie proprietà memorizzate all'interno del JWT decodificato.
 
 
 
