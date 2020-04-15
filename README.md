@@ -35,7 +35,30 @@ flask-jwt-extended:  https://flask-jwt-extended.readthedocs.io/en/stable/
 
 ## REST APIs with Flask and Python
 
+L'API (interfaccia di programmazione dell'applicazione) consente la comunicazione tra due applicazioni per recuperare o inviare i dati. 
 
+Librerie utilizzate per la creazione REST APIs: 
+
+
+
+
+
+Struttura della nostra API REST
+
+#app.py
+
+
+
+
+
+
+
+
+
+• Con l’utente admin e relativa password (che non sono presenti nel database) si possa inserire attraverso il webservice (all’endpoint: /adduser ) un nuovo utente con i campi user, password e info (nel database mariadb/mysql)
+• Autenticazione dei normali utenti (non admin) verso il webservice (all’endpoint: /auth ) con utente e password (che devono risiedere nel database mariadb/mysql) che deve restituire un token di autenticazione in caso di successo
+• effettuare una richiesta verso il webservice (endpoint: /info ) usando il token preventivamente ricevuto per avere le informazioni sull’utente (che si trovano nel database mariadb/mysql)
+• La password di admin deve poter essere passata come parametro all’avvio del programma
 
 
 
